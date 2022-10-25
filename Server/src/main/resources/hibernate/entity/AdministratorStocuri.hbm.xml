@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                "-//Hibernate/Hibernate Mapping DTD//EN"
+                "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="app.server.model">
+    <class name="AdministratorStocuri" table="AdministratoriStocuri">
+        <id name="id" type="java.lang.Integer" column="id">
+            <generator class="increment"/>
+        </id>
+        <property
+                name="nume"
+                column="nume"/>
+        <property
+                name="prenume"
+                column="prenume"/>
+        <property
+                name="username"
+                column="username"/>
+        <property
+                name="password"
+                column="password"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="dialect">app.server.org.hibernate.dialect.SQLiteDialect</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.url">jdbc:sqlite:C:\Users\MSI\Desktop\Informatica\Anul III\ELL - Elaborarea Lucrarii de Licenta\Aplicatie_Licenta\Electronics_Store_Order_Manager_1\electronics_store_order_manager2.db</property>
+
+        <!--<property name="hibernate.hbm2ddl.auto">update</property>-->
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!--<mapping resource="entity/Operator.hbm.xml"/>-->
+        <mapping class="app.server.model.Operator"/>
+        <mapping class="app.server.model.AdministratorComenzi"/>
+        <mapping class="app.server.model.AdministratorStocuri"/>
+        <mapping class="app.server.model.Client"/>
+        <mapping class="app.server.model.Comanda"/>
+        <mapping class="app.server.model.Producator"/>
+        <mapping class="app.server.model.Produs"/>
+        <mapping class="app.server.model.ProdusComanda"/>
+        <mapping class="app.server.model.TipProdus"/>
+        <mapping class="app.server.model.StocProdus"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="563.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.client.controller.AdminStocuriController">
+    <children>
+        <AnchorPane id="anchorPane_children" layoutY="89.0" minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="883.0">
+            <children>
+                <TableView fx:id="tableStocuri" layoutX="25.0" layoutY="60.0" prefHeight="380.0" prefWidth="530.0">
+                    <columns>
+                        <TableColumn fx:id="columnIdProdus" prefWidth="40.0" text="ID" />
+                        <TableColumn fx:id="columnNume" prefWidth="175.9999656677246" text="Nume produs" />
+                        <TableColumn fx:id="columnProducator" prefWidth="105.60005187988281" text="Producator" />
+                        <TableColumn fx:id="columnTip" prefWidth="94.39996337890625" text="Tip" />
+                        <TableColumn fx:id="columnPret" prefWidth="62.0" text="Pret" />
+                        <TableColumn fx:id="columnStoc" minWidth="0.0" prefWidth="53.20001220703125" text="Stoc" />
+                    </columns>
+                </TableView>
+                <Label layoutX="25.0" layoutY="25.0" text="Stocuri">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="textFieldNume" layoutX="683.0" layoutY="25.0" />
+                <TextField fx:id="textFieldProducator" layoutX="683.0" layoutY="76.0" />
+                <TextField fx:id="textFieldTip" layoutX="683.0" layoutY="128.0" />
+                <Spinner fx:id="spinnerStoc" layoutX="683.0" layoutY="234.0" prefHeight="26.0" prefWidth="150.0" />
+                <Label layoutX="597.0" layoutY="29.0" text="Nume Produs" />
+                <Label layoutX="612.0" layoutY="80.0" text="Producator" />
+                <Label layoutX="613.0" layoutY="132.0" text="Tip produs" />
+                <Label layoutX="639.0" layoutY="184.0" text="Pret" />
+                <Label layoutX="638.0" layoutY="238.0" text="Stoc" />
+                <Button layoutX="661.0" layoutY="300.0" mnemonicParsing="false" onAction="#buttonAdaugareClicked" prefHeight="26.0" prefWidth="118.0" text="Adaugare" />
+                <Button layoutX="661.0" layoutY="350.0" mnemonicParsing="false" onAction="#buttonStergereClicked" prefHeight="26.0" prefWidth="118.0" text="Stergere" />
+                <Button layoutX="661.0" layoutY="404.0" mnemonicParsing="false" onAction="#buttonActualizareClicked" prefHeight="26.0" prefWidth="118.0" text="Actualizare" />
+                <TextField fx:id="textFieldPret" layoutX="684.0" layoutY="180.0" />
+            </children>
+        </AnchorPane>
+          <Button layoutX="745.0" layoutY="31.0" mnemonicParsing="false" onAction="#buttonDeconectareClicked" prefHeight="26.0" prefWidth="100.0" text="Deconectare" />
+          <Label fx:id="labelAdmin" layoutX="41.0" layoutY="25.0" text="Administrator stocuri :" />
+          <Label fx:id="labelUsername" layoutX="99.0" layoutY="47.0" text="Username :" />
+    </children>
+</AnchorPane>

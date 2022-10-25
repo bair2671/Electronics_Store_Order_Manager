@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="app.server.model">
+    <class name="Comanda" table="Comenzi">
+        <id name="id" type="java.lang.Integer" column="id">
+            <generator class="increment"/>
+        </id>
+        <property
+                name="status"
+                column="status"/>
+        <property
+                name="data"
+                column="data"/>
+        <many-to-one
+                name="client"
+                cascade="all"
+                column="id_client"/>
+        <many-to-one
+                name="operator"
+                cascade="all"
+                column="id_operator"/>
+        <property
+                name="valoare"
+                column="valoare"/>
+    </class>
+</hibernate-mapping>

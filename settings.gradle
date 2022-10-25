@@ -1,0 +1,4 @@
+rootProject.name = 'Electronics_Store_Order_Manager'
+include 'Client'
+include 'Server'
+

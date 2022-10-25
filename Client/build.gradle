@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'application'
+}
+
+sourceCompatibility = 1.8
+
+group 'StartGradle'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "16"
+    modules = [ 'javafx.controls', 'javafx.fxml'  ]
+}
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile project (':Server')
+    compile 'org.springframework:spring-context:5.0.4.RELEASE'
+    compile 'com.itextpdf:itext7-core:7.0.2'
+
+}
+
+mainClassName='app.client.StartClient'
+

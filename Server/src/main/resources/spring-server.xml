@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!--<util:properties id="prop" location="classpath:appserver.properties"/>-->
+
+    <bean id="clientRepo" class="app.server.repository.hibernate.ClientHbRepo"/>
+    <bean id="comandaRepo" class="app.server.repository.hibernate.ComandaHbRepo"/>
+    <bean id="operatorRepo" class="app.server.repository.hibernate.OperatorHbRepo"/>
+    <bean id="adminComenziRepo" class="app.server.repository.hibernate.AdministratorComenziHbRepo"/>
+    <bean id="adminStocuriRepo" class="app.server.repository.hibernate.AdministratorStocuriHbRepo"/>
+    <bean id="producatorRepo" class="app.server.repository.hibernate.ProducatorHbRepo"/>
+    <bean id="produsComandaRepo" class="app.server.repository.hibernate.ProdusComandaHbRepo"/>
+    <bean id="produsRepo" class="app.server.repository.hibernate.ProdusHbRepo"/>
+    <bean id="stocProdusRepo" class="app.server.repository.hibernate.StocProdusHbRepo"/>
+    <bean id="tipProdusRepo" class="app.server.repository.hibernate.TipProdusHbRepo"/>
+
+    <bean id="appService" class="app.server.server.Service">
+        <constructor-arg ref="clientRepo"/>
+        <constructor-arg ref="comandaRepo"/>
+        <constructor-arg ref="operatorRepo"/>
+        <constructor-arg ref="adminComenziRepo"/>
+        <constructor-arg ref="adminStocuriRepo"/>
+        <constructor-arg ref="producatorRepo"/>
+        <constructor-arg ref="produsComandaRepo"/>
+        <constructor-arg ref="produsRepo"/>
+        <constructor-arg ref="stocProdusRepo"/>
+        <constructor-arg ref="tipProdusRepo"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="serviceName" value="App"/>
+        <property name="service" ref="appService"/>
+        <property name="serviceInterface" value="app.server.services.IService"/>
+        <property name="servicePort" value="1099"/>
+    </bean>
+
+
+
+</beans>

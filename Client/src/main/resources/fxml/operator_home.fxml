@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="642.0" prefWidth="1268.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.client.controller.OperatorController">
+    <children>
+        <TabPane layoutY="98.0" prefHeight="544.0" prefWidth="1313.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Creare comanda">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="515.0" prefWidth="1174.0">
+                            <children>
+                                <TableView fx:id="tableProduse" layoutX="186.0" layoutY="60.0" prefHeight="362.0" prefWidth="540.0">
+                                    <columns>
+                                        <TableColumn fx:id="columnIdProdus" prefWidth="40.0" text="ID" />
+                                        <TableColumn fx:id="columnNume" prefWidth="211.19997787475586" text="Nume produs" />
+                                        <TableColumn fx:id="columnProducator" prefWidth="113.20002746582031" text="Producator" />
+                                        <TableColumn fx:id="columnTip" prefWidth="110.79998779296875" text="Tip" />
+                                        <TableColumn fx:id="columnPret" prefWidth="64.0" text="Pret" />
+                                    </columns>
+                                </TableView>
+                                <Label layoutX="187.0" layoutY="25.0" text="Produsele aflate in stoc">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <TableView fx:id="tableCos" layoutX="787.0" layoutY="60.0" prefHeight="168.0" prefWidth="490.0">
+                                    <columns>
+                                        <TableColumn fx:id="columnNumeCos" prefWidth="192.79998779296875" text="Nume produs" />
+                                        <TableColumn fx:id="columnProducatorCos" prefWidth="75.1998291015625" text="Producator" />
+                                        <TableColumn fx:id="columnTipCos" prefWidth="78.400146484375" text="Tip" />
+                                        <TableColumn fx:id="columnPretCos" minWidth="2.400146484375" prefWidth="53.5999755859375" text="Pret" />
+                                        <TableColumn fx:id="columnNrExemplareCos" maxWidth="89.0" prefWidth="91.199951171875" text="Nr. exemplare" />
+                                    </columns>
+                                </TableView>
+                                <Label layoutX="789.0" layoutY="25.0" text="Cos">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="buttonAdaugaInCos" layoutX="582.0" layoutY="449.0" mnemonicParsing="false" onAction="#buttonAdaugaInCosClicked" prefHeight="26.0" prefWidth="146.0" text="Adauga in cos" />
+                                <Button fx:id="buttonStergeDinCos" layoutX="1131.0" layoutY="245.0" mnemonicParsing="false" onAction="#buttonStergeDinCosClicked" prefHeight="26.0" prefWidth="146.0" text="Sterge din cos" />
+                                <Button fx:id="buttonInregistrareComanda" layoutX="1128.0" layoutY="449.0" mnemonicParsing="false" onAction="#buttonInregistrareComandaClicked" prefHeight="26.0" prefWidth="149.0" text="Inregistare comanda" />
+                                <Label layoutX="1081.0" layoutY="25.0" text="Valoare comanda:" />
+                                <Label fx:id="labelValoareNumerica" layoutX="1187.0" layoutY="25.0" prefHeight="18.0" prefWidth="90.0" text="0.0 lei" />
+                                <Label layoutX="789.0" layoutY="277.0" text="Informatii client:">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="816.0" layoutY="325.0" text="Nume" />
+                                <Label layoutX="802.0" layoutY="372.0" prefHeight="18.0" prefWidth="59.0" text="Prenume" />
+                                <Label layoutX="1069.0" layoutY="326.0" prefHeight="18.0" prefWidth="42.0" text="Telefon" />
+                                <Label layoutX="1080.0" layoutY="372.0" prefHeight="18.0" prefWidth="30.0" text="Email" />
+                                <TextField fx:id="textFieldNume" layoutX="865.0" layoutY="321.0" prefHeight="26.0" prefWidth="156.0" />
+                                <TextField fx:id="textFieldTelefon" layoutX="1127.0" layoutY="322.0" />
+                                <TextField fx:id="textFieldPrenume" layoutX="866.0" layoutY="368.0" prefHeight="26.0" prefWidth="156.0" />
+                                <TextField fx:id="textFieldEmail" layoutX="1126.0" layoutY="369.0" />
+                        <Label fx:id="labelTip" layoutX="25.0" layoutY="25.0" text="Tip" />
+                        <ListView fx:id="listViewTip" layoutX="25.0" layoutY="49.0" prefHeight="172.0" prefWidth="123.0" />
+                        <Label fx:id="labelProducator" layoutX="25.0" layoutY="242.0" text="Producator" />
+                        <ListView fx:id="listViewProducator" layoutX="25.0" layoutY="264.0" prefHeight="218.0" prefWidth="123.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Confirmare livrare">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="1178.0">
+                            <children>
+                                <TableView fx:id="tableComenzi" layoutX="25.0" layoutY="60.0" prefHeight="428.0" prefWidth="479.0">
+                                    <columns>
+                                        <TableColumn fx:id="columnId" prefWidth="57.60000228881836" text="ID" />
+                                        <TableColumn fx:id="columnClient" prefWidth="167.19996643066406" text="Client" />
+                                        <TableColumn fx:id="columnData" prefWidth="166.4000244140625" text="Data" />
+                                        <TableColumn fx:id="columnValoare" prefWidth="89.5999755859375" text="Valoare " />
+                                    </columns>
+                                </TableView>
+                                <Label layoutX="25.0" layoutY="23.0" text="Comenzi trimise">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="buttonConfirmare" layoutX="1131.0" layoutY="449.0" mnemonicParsing="false" onAction="#buttonConfirmareClicked" prefHeight="26.0" prefWidth="149.0" text="Confirmare livrare" />
+                                <TableView fx:id="tableProduse2" layoutX="584.0" layoutY="238.0" prefHeight="183.0" prefWidth="696.0">
+                                    <columns>
+                                        <TableColumn fx:id="columnNume2" prefWidth="244.00006103515625" text="Nume produs" />
+                                        <TableColumn fx:id="columnProducator2" prefWidth="135.199951171875" text="Producator" />
+                                        <TableColumn fx:id="columnTip2" prefWidth="126.4000244140625" text="Tip" />
+                                        <TableColumn fx:id="columnPret2" prefWidth="92.80010986328125" text="Pret" />
+                                        <TableColumn fx:id="columnNrExemplare2" prefWidth="108.7999267578125" text="Nr. exemplare" />
+                                    </columns>
+                                </TableView>
+                                <Label layoutX="587.0" layoutY="64.0" text="Data" />
+                                <Label layoutX="813.0" layoutY="64.0" text="Valoare" />
+                                <Label layoutX="585.0" layoutY="24.0" text="Detalii comanda:">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="textFieldData2" layoutX="644.0" layoutY="60.0" prefHeight="26.0" prefWidth="144.0" />
+                                <TextField fx:id="textFieldValoare2" layoutX="864.0" layoutY="59.0" prefHeight="26.0" prefWidth="149.0" />
+                                <TextField fx:id="textFieldNume2" layoutX="644.0" layoutY="98.0" prefHeight="26.0" prefWidth="142.0" />
+                                <TextField fx:id="textFieldEmail2" layoutX="864.0" layoutY="98.0" prefHeight="26.0" prefWidth="150.0" />
+                                <TextField fx:id="textFieldPrenume2" layoutX="644.0" layoutY="135.0" prefHeight="26.0" prefWidth="143.0" />
+                                <TextField fx:id="textFieldTelefon2" layoutX="865.0" layoutY="135.0" />
+                                <Label layoutX="585.0" layoutY="99.0" prefHeight="18.0" prefWidth="45.0" text="Nume" />
+                                <Label layoutX="814.0" layoutY="100.0" prefHeight="18.0" prefWidth="40.0" text="Email" AnchorPane.topAnchor="100.0" />
+                                <Label layoutX="586.0" layoutY="139.0" prefHeight="18.0" prefWidth="50.0" text="Prenume" />
+                                <Label layoutX="814.0" layoutY="139.0" text="Telefon" />
+                                <Label layoutX="585.0" layoutY="201.0" prefHeight="20.0" prefWidth="64.0" text="Produse">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Predare comanda">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="1178.0">
+                            <children>
+                                <TableView fx:id="tableComenzi3" layoutX="25.0" layoutY="60.0" prefHeight="430.0" prefWidth="479.0">
+                                    <columns>
+                                        <TableColumn fx:id="columnId3" prefWidth="66.39999008178711" text="ID" />
+                                        <TableColumn fx:id="columnClient3" prefWidth="160.00005340576172" text="Client" />
+                                        <TableColumn fx:id="columnData3" prefWidth="168.7999267578125" text="Data" />
+                                        <TableColumn fx:id="columnValoare3" prefWidth="87.99993896484375" text="Valoare " />
+                                    </columns>
+                                </TableView>
+                                <Label layoutX="25.0" layoutY="25.0" text="Comenzi livrate">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="buttonPredare" layoutX="1131.0" layoutY="449.0" mnemonicParsing="false" onAction="#buttonPredareClicked" prefHeight="26.0" prefWidth="149.0" text="Confirmare ridicare" />
+                                <TableView fx:id="tableProduse3" layoutX="585.0" layoutY="241.0" prefHeight="184.0" prefWidth="694.0">
+                                    <columns>
+                                        <TableColumn fx:id="columnNume3" prefWidth="258.4000244140625" text="Nume produs" />
+                                        <TableColumn fx:id="columnProducator3" prefWidth="140.0" text="Producator" />
+                                        <TableColumn fx:id="columnTip3" prefWidth="108.79998779296875" text="Tip" />
+                                        <TableColumn fx:id="columnPret3" prefWidth="83.20001220703125" text="Pret" />
+                                        <TableColumn fx:id="columnNrExemplare3" prefWidth="104.800048828125" text="Nr. exemplare" />
+                                    </columns>
+                                </TableView>
+                                <Label layoutX="587.0" layoutY="64.0" text="Data" />
+                                <Label layoutX="813.0" layoutY="64.0" text="Valoare" />
+                                <Label layoutX="585.0" layoutY="25.0" text="Detalii comanda:">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="textFieldData3" layoutX="643.0" layoutY="60.0" prefHeight="26.0" prefWidth="144.0" />
+                                <TextField fx:id="textFieldValoare3" layoutX="867.0" layoutY="60.0" prefHeight="26.0" prefWidth="149.0" />
+                                <TextField fx:id="textFieldNume3" layoutX="643.0" layoutY="97.0" prefHeight="26.0" prefWidth="142.0" />
+                                <TextField fx:id="textFieldEmail3" layoutX="867.0" layoutY="96.0" prefHeight="26.0" prefWidth="150.0" />
+                                <TextField fx:id="textFieldPrenume3" layoutX="643.0" layoutY="136.0" prefHeight="26.0" prefWidth="143.0" />
+                                <TextField fx:id="textFieldTelefon3" layoutX="868.0" layoutY="136.0" />
+                                <Label layoutX="586.0" layoutY="100.0" prefHeight="18.0" prefWidth="39.0" text="Nume" />
+                                <Label layoutX="815.0" layoutY="100.0" prefHeight="18.0" prefWidth="39.0" text="Email" />
+                                <Label layoutX="586.0" layoutY="140.0" prefHeight="18.0" prefWidth="50.0" text="Prenume" />
+                                <Label layoutX="815.0" layoutY="140.0" text="Telefon" />
+                                <Label layoutX="586.0" layoutY="206.0" text="Produse">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="buttonDeconectare" layoutX="1181.0" layoutY="36.0" mnemonicParsing="false" onAction="#buttonDeconectareClicked" prefHeight="26.0" prefWidth="98.0" text="Deconectare" />
+        <Label fx:id="labelOperator" layoutX="25.0" layoutY="25.0" prefHeight="18.0" prefWidth="373.0" text="Operator :" />
+        <Label fx:id="labelUsername" layoutX="25.0" layoutY="49.0" prefHeight="18.0" prefWidth="384.0" text="Username :" />
+    </children>
+</AnchorPane>
