@@ -12,3 +12,5 @@ picked them up.
 
 The stock administrator can add new products to the application, update or withdraw product stocks from the application. After any change, all operators logged in to the
 application will see the updated list of products left in stock.
+
+This application is developed using Spring Framework and Hibernate.
